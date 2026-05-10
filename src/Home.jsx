@@ -8,9 +8,23 @@ export default function Home()
 {
     return (
         <div className="container">
+            <NavBar/>
             <WelcomeMessage/>
             <AboutMe/>
             <InterestList/>
+        </div>
+    );
+}
+
+function NavBar()
+{
+    return (
+        <div className="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </nav>
         </div>
     );
 }
