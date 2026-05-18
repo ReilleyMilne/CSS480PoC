@@ -4,6 +4,31 @@ head, body
     padding: 0;
 }
 
+.skip-link
+{
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 9999;
+ 
+    background: #ffffff;
+    color: #DD9840;
+    border: 2px solid #DD9840;
+    border-radius: 4px;
+ 
+    padding: 8px 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+ 
+    transition: top 0.15s ease;
+}
+
+.skip-link:focus
+{
+    top: 8px;
+}
+
 div.container
 {
     display: flex;
@@ -51,7 +76,7 @@ nav
     height: 50px;
 }
 
-nav ul
+nav ul.navbar
 {
     display: flex;
     justify-content: flex-start;
@@ -62,7 +87,7 @@ nav ul
     height: 50px;
 }
 
-a
+ul.navbar li a
 {
     display: flex;
     text-decoration: none;
@@ -82,17 +107,78 @@ a
     font-size: 20px;
 }
 
-a:hover
-{
-    text-decoration: underline;
-}
-
-li a:hover
+ul.navbar li a:hover
 {
     background-color: #DD9840;
     color: #ffffff;
+    text-decoration: underline;
 }
 
+ul.navbar li a:focus,
+ul.navbar li a:focus-visible
+{
+    outline: 3px solid #ffffff;
+    outline-offset: -3px;
+    background-color: #b37320;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:focus,
+a:focus-visible
+{
+    outline: 3px solid #DD9840;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+button:focus,
+button:focus-visible
+{
+    outline: 3px solid #DD9840;
+    outline-offset: 3px;
+}
+
+.keyboard-docs
+{
+    background-color: #fdf6ec;
+    border: 1.5px solid #e8b97d;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 0 8px 20px 8px;
+    max-width: 700px;
+}
+
+.keyboard-table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+ 
+.keyboard-table th
+{
+    background-color: #e8b97d;
+    color: #4a2e08;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: bold;
+}
+ 
+.keyboard-table td
+{
+    padding: 7px 10px;
+    border-bottom: 1px solid #e8b97d;
+    color: #333;
+    vertical-align: top;
+}
+ 
+.keyboard-table tr:last-child td
+{
+    border-bottom: none;
+}
+  
 .theme-switch
 {
     display: flex;
@@ -169,4 +255,36 @@ div.interest-list button:hover
 div.interest-list button:active
 {
     border: 2px solid lightgrey;
+}
+
+.links
+{
+    padding: 0 8px;
+}
+ 
+div.links h1
+{
+    margin: 8px;
+}
+ 
+ul.links-list
+{
+    list-style-type: disc;
+    padding-left: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
+ul.links-list li a
+{
+    font-size: 16px;
+    color: #9c5a10;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+ 
+ul.links-list li a:hover
+{
+    color: #DD9840;
 }

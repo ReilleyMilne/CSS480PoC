@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 import './Home.css';
 
@@ -8,10 +9,13 @@ export default function Home()
 {
     return (
         <div className="container">
+            <a href="#main-content" className="skip-link">Skip to main content</a>
             <NavBar/>
-            <WelcomeMessage/>
-            <AboutMe/>
-            <InterestList/>
+            <main id="main-content" style={{ display: "contents" }}>
+                <WelcomeMessage/>
+                <AboutMe/>
+                <InterestList/>
+            </main>
         </div>
     );
 }
@@ -21,8 +25,9 @@ function NavBar()
     return (
         <div className="navbar">
             <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
+                <ul className="navbar">
+                    <li><Link to="/" accessKey="h" aria-label="Home (alt+h)">Home</Link></li>
+                    <li><Link to="/things-to-read" accessKey="t" aria-current="page" aria-label="Things to Read (alt+t)">Things To Read</Link></li>
                 </ul>
             </nav>
         </div>
@@ -85,7 +90,7 @@ function InterestList()
                     <li key={index}>{element}</li>
                 )}
             </ul>
-            <button onClick={rotateList}>Click to reorder!</button>
+            <button onClick={rotateList} aria-label="Reorder the interest list.">Click to reorder!</button>
         </div>
     );
 }
